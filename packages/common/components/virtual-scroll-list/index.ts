@@ -1,3 +1,1 @@
-import VirtualList from './src'
-
-export { VirtualList }
+export { default as VirtualList } from './src'

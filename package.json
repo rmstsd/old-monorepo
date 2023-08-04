@@ -3,12 +3,5 @@
   "private": true,
   "workspaces": [
     "packages/*"
-  ],
-  "dependencies": {},
-  "devDependencies": {
-    "lerna": "^7.1.4"
-  },
-  "scripts": {
-    "create": "lerna create ss --yes"
-  }
+  ]
 }
