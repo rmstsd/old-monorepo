@@ -10,7 +10,7 @@ export type CustomScrollbarRef = React.RefObject<{
   scrollTo: (scrollTop: number) => void
 }>
 
-const CustomScrollbar = forwardRef((props: CustomScrollbarProps, ref: CustomScrollbarRef) => {
+export const CustomScrollbar = forwardRef((props: CustomScrollbarProps, ref: CustomScrollbarRef) => {
   const { children, onSyncScroll, ...htmlAttr } = props
 
   const [thumbHeight, setThumbHeight] = useState(0)
@@ -131,10 +131,10 @@ const CustomScrollbar = forwardRef((props: CustomScrollbarProps, ref: CustomScro
   return (
     <main
       {...htmlAttr}
-      className={classNames('scroll-container grow shrink-0', htmlAttr.className)}
+      className={classNames('scroll-container', htmlAttr.className)}
       style={{ position: 'relative', ...htmlAttr.style }}
     >
-      <section className="scrollbar-view h-full overflow-hidden" ref={rootDomRef}>
+      <section className="scrollbar-view" ref={rootDomRef} style={{ overflow: 'hidden', height: '100%' }}>
         <div
           ref={contentDomRef}
           className="content"
@@ -150,16 +150,14 @@ const CustomScrollbar = forwardRef((props: CustomScrollbarProps, ref: CustomScro
         </div>
       </section>
 
-      <div className="absolute right-0 top-0 bottom-0 bg-gray-100 w-[30px] ">
+      <div style={{ position: 'absolute', right: 0, top: 0, bottom: 0, width: 10, backgroundColor: '#eee' }}>
         <div
           ref={thumbDomRef}
-          className="w-full bg-purple-400 h-[20px]"
-          style={{ height: thumbHeight }}
+          className="w-full"
+          style={{ height: thumbHeight, backgroundColor: '#aaa' }}
           onMouseDown={onThumbMouseDown}
         ></div>
       </div>
     </main>
   )
 })
-
-export default CustomScrollbar

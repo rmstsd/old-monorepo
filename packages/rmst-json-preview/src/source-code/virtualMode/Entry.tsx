@@ -10,7 +10,7 @@ import CopyIcon from './components/CopyIcon'
 
 import './style.less'
 
-import VirtualListVue from '../../components/virtual-scroll-list'
+import { VirtualList as VirtualListVue } from 'common'
 import SearchTool from './components/SearchTool'
 
 const rowHeight = 24

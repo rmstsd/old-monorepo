@@ -1,8 +1,7 @@
 import React, { forwardRef, useEffect, useImperativeHandle, useRef, useCallback, useState } from 'react'
-import VirtualList from '@/components/virtual-scroll-list'
 import { Form, Button, Input, Tag, Checkbox, TimePicker, Radio } from '@arco-design/web-react'
 
-import CustomScrollbar from '@/components/CustomScrollbar/CustomScrollbar'
+import { VirtualList, CustomScrollbar } from 'common'
 
 const dataSources = Array.from({ length: 100 }, (_, index) => ({ index, name: index + '-name', id: index }))
 
@@ -18,8 +17,7 @@ const Misc = () => {
       <hr />
 
       <VirtualList
-        className="list"
-        style={{ border: '2px solid #333' }}
+        style={{ border: '2px solid #333', height: 400 }}
         dataKey="id"
         dataSources={dataSources}
         dataComponent={ItemComponent}
