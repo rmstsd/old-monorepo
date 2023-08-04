@@ -1,5 +1,5 @@
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react'
-import { useUpdate } from '@/utils/hooks'
+import { useUpdate } from 'common/hooks'
 import { lossFrame, sleep } from '@/utils/utils'
 
 const data = Array.from({ length: 20 }, () => 1)

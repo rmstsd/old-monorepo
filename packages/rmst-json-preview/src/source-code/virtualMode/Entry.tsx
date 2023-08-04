@@ -5,12 +5,14 @@ import Highlighter from 'react-highlight-words'
 import PreviewCore, { isLeftBracketItem, HighlightSearch, IRenderItem } from './previewCore'
 
 import VirtualListComponent, { IVirtualListRef } from '../../components/VirtualList'
-import { useUpdate } from '../hooks'
+
 import CopyIcon from './components/CopyIcon'
 
 import './style.less'
 
 import { VirtualList as VirtualListVue } from 'common'
+import { useUpdate } from 'common/hooks'
+
 import SearchTool from './components/SearchTool'
 
 const rowHeight = 24

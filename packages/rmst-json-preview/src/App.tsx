@@ -1,12 +1,11 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { Button, Checkbox, Radio, Slider, Space, Divider, Input } from '@arco-design/web-react'
 import { faker } from '@faker-js/faker'
+import { useLocalStorageState } from 'common/hooks'
 
-import { useLocalStorageState, useUpdate } from './source-code/hooks'
 import MonacoEditor from './components/MonacoEditor'
 import JsonView from './source-code/index'
 import { isComplex } from './source-code/virtualMode/utils'
-import VirtualList from './components/virtual-scroll-list'
 
 faker.setLocale('zh_CN')
 

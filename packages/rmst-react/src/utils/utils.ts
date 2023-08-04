@@ -7,6 +7,10 @@ class Scanner {
     this.tail = text
   }
 
+  text
+  pos
+  tail
+
   /**
    * 路过指定内容
    * @memberof Scanner

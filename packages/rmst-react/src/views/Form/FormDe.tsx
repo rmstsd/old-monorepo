@@ -1,7 +1,7 @@
 import { Form, Input, Button, InputNumber, Tooltip } from '@arco-design/web-react'
 import { memo, useEffect, useState, createContext, useContext } from 'react'
 import { Schema } from 'b-validate'
-import { useUpdate } from '@/utils/hooks'
+import { useUpdate } from 'common/hooks'
 import classNames from 'classnames'
 import { create } from 'zustand'
 
