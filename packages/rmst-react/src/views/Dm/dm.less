@@ -1,0 +1,28 @@
+.dm-running {
+  animation-play-state: running;
+}
+
+.dm-paused {
+  animation-play-state: paused;
+}
+
+.dm {
+  &:hover {
+    animation-play-state: paused;
+  }
+}
+.animation-b {
+  animation-name: dmAni;
+  animation-duration: 10s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes dmAni {
+  0% {
+    transform: translateX(var(--container-width));
+  }
+  100% {
+    transform: translateX(calc(-1 * var(--dm-width)));
+  }
+}
