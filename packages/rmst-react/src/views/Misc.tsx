@@ -5,8 +5,6 @@ import { VirtualList, CustomScrollbar } from 'common'
 
 const dataSources = Array.from({ length: 100 }, (_, index) => ({ index, name: index + '-name', id: index }))
 
-console.log(dataSources.length)
-
 const Misc = () => {
   const ref = useRef<HTMLDivElement>()
 
