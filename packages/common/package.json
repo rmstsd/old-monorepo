@@ -5,7 +5,7 @@
   "author": "rmst",
   "license": "MIT",
   "module": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "types": "dist/types/index.d.ts",
   "scripts": {
     "tsc": "tsc"
   },

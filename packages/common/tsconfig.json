@@ -1,17 +1,18 @@
 {
-  "include": ["components", "hooks", "index.ts"],
+  "include": ["src"],
 
   "compilerOptions": {
     "target": "ES2015",
     "module": "ES2020",
-    "rootDirs": ["components", "hooks", "index.ts"],
+    "rootDir": "src",
     "moduleResolution": "node",
     "outDir": "./dist",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": false,
     "skipLibCheck": true,
-    "jsx": "react-jsx",
-    "declaration": true
+    "jsx": "react",
+    "declaration": true,
+    "declarationDir": "./dist/types"
   }
 }

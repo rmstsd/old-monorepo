@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { Button, Checkbox, Radio, Slider, Space, Divider, Input } from '@arco-design/web-react'
 import { faker } from '@faker-js/faker'
-import { useLocalStorageState } from 'common/hooks'
+import { useLocalStorageState } from '@rmstds/common/hooks'
 
 import MonacoEditor from './components/MonacoEditor'
 import JsonView from './source-code/index'

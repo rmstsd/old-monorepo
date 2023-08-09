@@ -10,8 +10,8 @@ import CopyIcon from './components/CopyIcon'
 
 import './style.less'
 
-import { VirtualList as VirtualListVue } from 'common'
-import { useUpdate } from 'common/hooks'
+import { VirtualList as VirtualListVue } from '@rmstds/common'
+import { useUpdate } from '@rmstds/common/hooks'
 
 import SearchTool from './components/SearchTool'
 
