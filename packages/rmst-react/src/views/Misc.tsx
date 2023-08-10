@@ -15,7 +15,7 @@ const Misc = () => {
       <hr />
 
       <VirtualList
-        style={{ border: '2px solid #333', height: 400 }}
+        style={{ border: '2px solid #333', height: 400, overflow: 'hidden' }}
         dataKey="id"
         dataSources={dataSources}
         dataComponent={ItemComponent}
@@ -32,17 +32,20 @@ const Misc = () => {
 const ItemComponent = item => {
   return (
     <div
-      className="item-inner"
       style={{
         display: 'flex',
         alignItems: 'center',
         height: 30,
+        width: 800,
         overflow: 'hidden',
         borderBottom: '1px solid #aaa'
       }}
     >
       <Tag># {item.index}</Tag>
 
+      <FormView></FormView>
+      <FormView></FormView>
+      <FormView></FormView>
       <FormView></FormView>
     </div>
   )
