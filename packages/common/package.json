@@ -4,7 +4,7 @@
   "description": "xxx",
   "author": "rmst",
   "license": "MIT",
-  "module": "src",
+  "module": "src/index.ts",
   "types": "dist/types/index.d.ts",
   "scripts": {
     "tsc": "tsc"

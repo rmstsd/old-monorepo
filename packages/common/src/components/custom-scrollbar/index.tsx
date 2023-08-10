@@ -1,6 +1,7 @@
 import classNames from 'classnames'
 import React, { forwardRef, useImperativeHandle, useLayoutEffect, useRef, useState } from 'react'
 import { Ani } from './ani'
+import { throttleByRaf } from '../../utils'
 
 type CustomScrollbarProps = React.HtmlHTMLAttributes<HTMLDivElement> & {
   onSyncScroll?: (scrollTop: number) => void
@@ -104,7 +105,7 @@ export const CustomScrollbar = forwardRef((props: CustomScrollbarProps, ref: Cus
     const thumbDomDownOffsetY = evt.clientY - thumbDomRef.current.getBoundingClientRect().top
     const rootDomRect = rootDomRef.current.getBoundingClientRect()
 
-    const onDocumentMousemove = (evt: MouseEvent) => {
+    const onDocumentMousemove = throttleByRaf((evt: MouseEvent) => {
       evt.preventDefault()
       let thumbY = evt.clientY - rootDomRect.top - thumbDomDownOffsetY
 
@@ -117,8 +118,7 @@ export const CustomScrollbar = forwardRef((props: CustomScrollbarProps, ref: Cus
       unknownScrollTo(scrollTop)
 
       aniInsRef.current.currValue = scrollTop
-    }
-
+    })
     const onDocumentMouseup = () => {
       document.removeEventListener('mousemove', onDocumentMousemove)
       document.removeEventListener('mouseup', onDocumentMouseup)
@@ -138,13 +138,12 @@ export const CustomScrollbar = forwardRef((props: CustomScrollbarProps, ref: Cus
         <div
           ref={contentDomRef}
           className="content"
-          style={
-            {
-              // overflow: 'hidden',
-              // pointerEvents: 'none'
-              // contain: 'strict'
-            }
-          }
+          style={{
+            // overflow: 'hidden',
+            pointerEvents: 'none',
+            userSelect: 'none'
+            // contain: 'strict'
+          }}
         >
           {children}
         </div>
